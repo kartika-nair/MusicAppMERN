@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import TextField from "@material-ui/core/TextField";
+import classes from "./App.module.css";
 import { Button } from "@material-ui/core";
 
 class Login extends React.Component {
@@ -24,30 +26,34 @@ class Login extends React.Component {
 		return (
 			<React.Fragment>
 				<form noValidate autoComplete="off">
+					<div className = {classes.centered}>
 					<div>
-						<TextField
-							type="text"
-							id="Username"
-							label="Username"
-							value={this.state.Username}
-							onChange={(e) => this.handleChange("Username", e)}
-							margin="normal"
-							variant="outlined"
-						/>
+							<TextField
+								type="text"
+								id="Username"
+								label="Username"
+								value={this.state.Username}
+								onChange={(e) => this.handleChange("Username", e)}
+								margin="normal"
+								variant="outlined"
+							/>
+						</div>
+						<div>
+							<TextField
+								type="password"
+								id="Password"
+								label="Password"
+								value={this.state.Password}
+								onChange={(e) => this.handleChange("Password", e)}
+								margin="normal"
+								variant="outlined"
+							/>
+						</div>
+						<Button>SIGN IN</Button>
 					</div>
-					<div>
-						<TextField
-							type="password"
-							id="Password"
-							label="Password"
-							value={this.state.Password}
-							onChange={(e) => this.handleChange("Password", e)}
-							margin="normal"
-							variant="outlined"
-						/>
+					<div className = {classes.lowered}>
+						<h4>No account? <Link to = "/register">Sign Up!</Link></h4>
 					</div>
-					<Button>LOGIN</Button>
-					<Button>SIGN UP</Button>
 				</form>
 			</React.Fragment>
 		);

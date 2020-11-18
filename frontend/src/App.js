@@ -1,18 +1,25 @@
-import React, {Fragment} from 'react';
-import classes from './App.module.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Register from './components/authentication/register.js';
 import Login from './components/authentication/login.js';
-import AppBarComponent from './components/navigation/AppBar/AppBar.js'
+import Profile from './components/profile.js';
+import Songs from './components/songs.js';
+import Choose from './components/choose.js';
+import Recommended from './components/recommended.js';
 
 class App extends React.Component {
 	render(){
 		return (
-			<Fragment>
-				<AppBarComponent />
-				<div className = {classes.centered}>
-					<Login />
-				</div>
-			</Fragment>
+			<BrowserRouter>
+			<Switch>
+				<Route path="/" exact component={Login} />
+				<Route path="/register" exact component={Register} />
+				<Route path="/myprofile" exact component={Profile} />
+				<Route path="/mysongs" exact component={Songs} />
+				<Route path="/moresongs" exact component={Choose} />
+				<Route path="/recommended" exact component={Recommended} />
+			</Switch>
+		</BrowserRouter>
 		)
 	};
 }

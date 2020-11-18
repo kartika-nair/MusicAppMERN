@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -31,10 +32,18 @@ export default function SimpleMenu() {
 				open={Boolean(anchorEl)}
 				onClose={handleClose}
 			>
-				<MenuItem onClick={handleClose}>My Profile</MenuItem>
-				<MenuItem onClick={handleClose}>My Songs</MenuItem>
-				<MenuItem onClick={handleClose}>Suggestions</MenuItem>
-				<MenuItem onClick={handleClose}>Choose More</MenuItem>
+				<Link to="/myprofile" style={{ textDecoration: 'none', display: 'block'}}>
+					<MenuItem onClick={handleClose}>My Profile</MenuItem>
+				</Link>
+				<Link to="/mysongs" style={{ textDecoration: 'none', display: 'block'}}>
+					<MenuItem onClick={handleClose}>My Songs</MenuItem>
+				</Link>
+				<Link to="/recommended" style={{ textDecoration: 'none', display: 'block'}}>
+					<MenuItem onClick={handleClose}>Suggestions</MenuItem>
+				</Link>
+				<Link to="/moresongs" style={{ textDecoration: 'none', display: 'block'}}>
+					<MenuItem onClick={handleClose}>Choose More</MenuItem>
+				</Link>
 			</Menu>
 		</div>
 	);

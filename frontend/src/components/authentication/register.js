@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
+import classes from "./App.module.css";
 import { Button } from "@material-ui/core";
 
 class Register extends React.Component {
@@ -30,42 +31,44 @@ class Register extends React.Component {
 		return (
 			<React.Fragment>
 				<form noValidate autoComplete="off">
-					<div>
-						<TextField
-							type="text"
-							id="Username"
-							label="Username"
-							value={this.state.Username}
-							onChange={(e) => this.handleChange("Username", e)}
-							margin="normal"
-							variant="outlined"
-						/>
+					<div className = {classes.centered}>
+						<div>
+							<TextField
+								type="text"
+								id="Username"
+								label="Username"
+								value={this.state.Username}
+								onChange={(e) => this.handleChange("Username", e)}
+								margin="normal"
+								variant="outlined"
+							/>
+						</div>
+						<div>
+							<TextField
+								type="password"
+								id="Password"
+								label="Password"
+								value={this.state.Password}
+								onChange={(e) => this.handleChange("Password", e)}
+								margin="normal"
+								variant="outlined"
+							/>
+						</div>
+						<div>
+							<TextField
+								type="password"
+								id="Confirm Password"
+								label="Confirm Password"
+								value={this.state.ConfirmPassword}
+								onChange={(e) =>
+									this.handleChange("Confirm Password", e)
+								}
+								margin="normal"
+								variant="outlined"
+							/>
+						</div>
+						<Button>SIGN UP!</Button>
 					</div>
-					<div>
-						<TextField
-							type="password"
-							id="Password"
-							label="Password"
-							value={this.state.Password}
-							onChange={(e) => this.handleChange("Password", e)}
-							margin="normal"
-							variant="outlined"
-						/>
-					</div>
-					<div>
-						<TextField
-							type="password"
-							id="Confirm Password"
-							label="Confirm Password"
-							value={this.state.ConfirmPassword}
-							onChange={(e) =>
-								this.handleChange("Confirm Password", e)
-							}
-							margin="normal"
-							variant="outlined"
-						/>
-					</div>
-					<Button>SIGN UP!</Button>
 				</form>
 			</React.Fragment>
 		);
