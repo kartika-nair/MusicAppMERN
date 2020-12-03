@@ -14,13 +14,13 @@ Open 2 terminals.
 In terminal 1:
 ```bash
 cd Authentication
-npm i && npm i -D
+npm i
 npm run dev
 ```
 
 In terminal 2:
 ```bash
 cd Music
-npm i && npm i -D
+npm i
 npm start
 ```
