@@ -1,5 +1,5 @@
 {
-  "name": "spotify-clone",
+  "name": "music-component",
   "version": "0.1.0",
   "private": true,
   "homepage": "/",
@@ -46,7 +46,7 @@
     "tslint-react": "^4.0.0"
   },
   "scripts": {
-    "start": "PORT=4000 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
     "test:watch": "react-scripts test --watch",

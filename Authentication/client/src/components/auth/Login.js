@@ -62,7 +62,7 @@ class Login extends Component {
 							style={{ paddingLeft: "11.250px" }}
 						>
 							<h4>
-								<b>Login</b> below
+								<b>LOGIN</b>
 							</h4>
 						</div>
 						<form
@@ -120,7 +120,7 @@ class Login extends Component {
 							style={{ paddingLeft: "11.250px" }}
 						>
 							<p className="grey-text text-darken-1">
-								Don't have an account?{" "}
+								No account?{" "}
 								<Link to="/register">Sign Up!</Link>
 							</p>
 						</div>

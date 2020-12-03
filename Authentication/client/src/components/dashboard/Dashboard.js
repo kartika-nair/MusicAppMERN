@@ -22,7 +22,7 @@ class Dashboard extends Component {
 						<h4>
 							<b>Hey there,</b> {user.name.split(" ")[0]}
 							<p className="flow-text grey-text text-darken-1">
-								You have logged into{" "}
+								You have logged in to{" "}
 								<span
 									style={{
 										fontFamily: "monospace",
@@ -33,7 +33,7 @@ class Dashboard extends Component {
 								</span>
 							</p>
 						</h4>
-						<a href="http://localhost:4000">
+						<a href="http://localhost:3001">
 							<Button>Go to site</Button>
 						</a>
 						<br />

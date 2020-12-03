@@ -63,7 +63,7 @@ class Register extends Component {
 							style={{ paddingLeft: "11.250px" }}
 						>
 							<h4>
-								<b>Register</b> below
+								<b>REGISTER</b>
 							</h4>
 						</div>
 						<form
@@ -137,7 +137,7 @@ class Register extends Component {
 								className="col s12"
 								style={{ paddingLeft: "11.250px" }}
 							>
-								<Button type="submit">Sign up</Button>
+								<Button type="submit">Sign Up</Button>
 							</div>
 						</form>
 						<div
