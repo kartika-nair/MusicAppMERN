@@ -20,7 +20,6 @@ class Register extends Component {
 	}
 
 	componentDidMount() {
-		// If logged in and user navigates to Register page, should redirect them to dashboard
 		if (this.props.auth.isAuthenticated) {
 			this.props.history.push("/dashboard");
 		}
@@ -63,7 +62,7 @@ class Register extends Component {
 							style={{ paddingLeft: "11.250px" }}
 						>
 							<h4>
-								<b>REGISTER</b>
+								<b>SIGN UP</b>
 							</h4>
 						</div>
 						<form
@@ -146,7 +145,7 @@ class Register extends Component {
 						>
 							<p className="grey-text text-darken-1">
 								Already have an account?{" "}
-								<Link to="/login">Login!</Link>
+								<Link to="/login">Sign In!</Link>
 							</p>
 						</div>
 					</div>

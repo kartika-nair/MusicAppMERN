@@ -1,7 +1,7 @@
 {
   "name": "authentication",
   "version": "1.0.0",
-  "description": "sign in and sign up",
+  "description": "authentication",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -23,7 +23,6 @@
     "nodemon": "^2.0.6",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "react-scripts": "^4.0.1",
     "validator": "^10.9.0"
   }
 }

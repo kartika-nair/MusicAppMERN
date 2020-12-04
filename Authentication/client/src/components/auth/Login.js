@@ -62,7 +62,7 @@ class Login extends Component {
 							style={{ paddingLeft: "11.250px" }}
 						>
 							<h4>
-								<b>LOGIN</b>
+								<b>SIGN IN</b>
 							</h4>
 						</div>
 						<form
@@ -112,7 +112,7 @@ class Login extends Component {
 								className="col s12"
 								style={{ paddingLeft: "11.250px" }}
 							>
-								<Button type="submit">Login</Button>
+								<Button type="submit">SIGN IN</Button>
 							</div>
 						</form>
 						<div

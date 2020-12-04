@@ -33,7 +33,7 @@ class Dashboard extends Component {
 								</span>
 							</p>
 						</h4>
-						<a href="http://localhost:3001">
+						<a href="http://localhost:4000">
 							<Button>Go to site</Button>
 						</a>
 						<br />
