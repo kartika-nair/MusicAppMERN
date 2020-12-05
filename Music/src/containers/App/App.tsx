@@ -11,6 +11,8 @@ import Loading from '../../components/Loading';
 import PlaylistSelectorView from '../../components/PlaylistSelectorView';
 import PlaylistView from '../../components/PlaylistView';
 import SideNavbar from '../../components/SideNavbar';
+import Search from '../../components/Search/Search';
+import Recommend from '../../components/Recommend/Recommend';
 import MainContainer from '../MainContainer';
 import PlayerContainer from '../PlayerContainer';
 
@@ -100,6 +102,14 @@ class App extends Component {
                       config={config.category}
                     />
                   )}
+                />
+                <Route
+                  path="/search"
+                  render={() => <Search />}
+                />
+                <Route
+                  path="/recommend"
+                  render={() => <Recommend />}
                 />;
               </Switch>
             </Section>

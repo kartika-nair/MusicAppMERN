@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom';
 import config from '../../config';
 
 import PlaylistSelectorView from '../../components/PlaylistSelectorView';
-import GenresView from '../../components/GenresView';
-
+import Search from '../../components/Search/Search';
+import Recommend from '../../components/Recommend/Recommend';
 import { Container, ListWrapper, Navbar, NavItem } from './styled';
 
 class MainContainer extends Component {
@@ -15,8 +15,9 @@ class MainContainer extends Component {
         <Navbar>
           <ListWrapper>
             <NavItem to="/browse/featured">FEATURED</NavItem>
-            <NavItem to="/browse/genres">GENRES & MOODS</NavItem>
             <NavItem to="/browse/newreleases">NEW RELEASES</NavItem>
+            <NavItem to="/search">SEARCH</NavItem>
+            <NavItem to="/recommend">RECOMMENDATIONS</NavItem>
             {/* <NavItem to="/browse/discover">DISCOVER</NavItem> */}
           </ListWrapper>
         </Navbar>
@@ -31,12 +32,6 @@ class MainContainer extends Component {
           )}
         />
         <Route
-          path="/browse/genres"
-          render={routeProps => (
-            <GenresView windowWidth={this.props.windowWidth} {...routeProps} />
-          )}
-        />
-        <Route
           path="/browse/newreleases"
           render={routeProps => (
             <PlaylistSelectorView
@@ -45,6 +40,14 @@ class MainContainer extends Component {
               config={config.albums}
             />
           )}
+        />
+        <Route
+          path="/search"
+          render={() => <Search/>}
+        />
+        <Route
+          path="/recommend"
+          render={() => <Recommend/>}
         />
       </Container>
     );
