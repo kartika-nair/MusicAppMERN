@@ -15,6 +15,9 @@ In terminal 1:
 ```bash
 cd Authentication
 npm i
+cd client
+npm i
+cd ..
 npm run dev
 ```
 
