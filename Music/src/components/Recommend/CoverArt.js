@@ -57,7 +57,11 @@ class CoverArt extends React.Component {
                 <PlayButton dataName="play" showPlay={!showPlayBtn} />
               )}
           </ClipartWrapper>
-          <Title bigTitle={this.props.bigTitle}>{this.props.temp.name}</Title>
+          <div style = {{
+            display: 'inline-block',
+          }}>
+            <Title bigTitle={this.props.bigTitle}>{this.props.temp.name}</Title>
+          </div>
           <br/>
           <Title bigTitle={!this.props.bigTitle}>Artist: {this.props.temp.artist_name}</Title>
           <Title bigTitle={!this.props.bigTitle}>Tracks: {this.props.temp.total_tracks}</Title>

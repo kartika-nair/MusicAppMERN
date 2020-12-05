@@ -1,8 +1,8 @@
 import React from 'react';
+//import {uid} from 'react-uid';
 import {
     DescriptionWrapper,
     Wrapper,
-    Header,
     ListWrapper,
     NavItem,
     Navbar,
@@ -11,24 +11,54 @@ import {
 import axios from 'axios';
 import CoverArt from './CoverArt.js';
 import './Search.css';
+import keys from '../../keys.js';
 
 export default class Search extends React.Component {
 
     state = {
+        clienID: keys.clientID,
+        clientSecret: keys.clientSecret,
+        access_token: "",
         searchField: "",
-        albums: [],
+        albums: []
     }
 
+    componentDidMount() {
+        this.getToken();
+    }
+
+    getToken = async () => {
+        const result = await fetch('https://accounts.spotify.com/api/token', 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization' : `Basic ` + btoa(this.state.clienID + ':' + this.state.clientSecret)
+
+            },
+            body: 'grant_type=client_credentials'
+        });
+        const data = await result.json();
+        this.state.access_token = data.access_token;
+        this.state.data = data;
+    }
+    
+
+
     onChangeHandler = (e) => {
+        const newSearchField = e.target.value.split(' ').join('%20OR%20');
         this.setState({
-            searchField: e.target.value
+            searchField: newSearchField
         })
     }
 
     searchHandler = () => {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://elegant-croissant.glitch.me/spotify?query=${this.state.searchField}&type=album`)
-    .then ((data) => {
-            //console.log(data.data.albums.items);
+        axios.get(`https://api.spotify.com/v1/search?q=${this.state.searchField}&type=album`, 
+        {
+            headers: {
+            Authorization: `Bearer ${this.state.access_token}`
+        }})
+        .then(data => {
             var responseData = data.data.albums.items;
             var newAlbum = [];
             responseData.forEach(element => {
@@ -43,8 +73,11 @@ export default class Search extends React.Component {
             this.setState({
                 albums: newAlbum
             })
-            
         })
+        .catch(err => {
+            console.log(err);
+        })
+    
     }
     componentDidUpdate() {
         this.searchHandler();
@@ -92,11 +125,13 @@ export default class Search extends React.Component {
                     <DescriptionWrapper>
                     {
                         this.state.albums.length ? 
+
                         <Wrapper template={this.gridTemplateColumns(100)}>
                             {
-                                this.state.albums.map(album => {
+                                this.state.albums.map((album, index) => {
                                     return <CoverArt 
-                                        key = {album.id}
+                                        key = {this.state.albums.id * (Date.now() + index)}
+                                        //key = {uid(index)}
                                         playBtn = {false} 
                                         bigTitle = {true} 
                                         temp = {album} 

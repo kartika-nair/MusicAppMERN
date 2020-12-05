@@ -51,16 +51,6 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 
-export const Header = styled.h1`
-  color: #fff;
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: -0.18px;
-  line-height: 44px;
-  margin: 24px 0;
-  text-align: center;
-`;
-
 
 export const DescriptionWrapper = styled.div`
   align-items: center;

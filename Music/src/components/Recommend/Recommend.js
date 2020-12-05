@@ -1,8 +1,8 @@
 import React from 'react';
+//import {uid} from 'react-uid';
 import {
     DescriptionWrapper,
     Wrapper,
-    Header,
     ListWrapper,
     NavItem,
     Navbar,
@@ -153,9 +153,10 @@ export default class Recommend extends React.Component {
                         this.state.albums.length ? 
                         <Wrapper template={this.gridTemplateColumns(100)}>
                             {
-                                this.state.albums.map(album => {
+                                this.state.albums.map((album, index) => {
                                     return <CoverArt 
-                                        key = {album.id}
+                                        key = {this.state.albums.id * (Date.now() + index)}
+                                        //key = {uid(index)}
                                         playBtn = {false} 
                                         bigTitle = {true} 
                                         temp = {album} 
