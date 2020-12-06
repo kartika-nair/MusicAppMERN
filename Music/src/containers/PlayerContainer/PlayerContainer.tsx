@@ -156,7 +156,7 @@ class PlayerContainer extends Component<TProps, IState> {
     this.audioEl.volume = value;
   };
 
-  componentWillReceiveProps({
+  UNSAFE_componentWillReceiveProps({
     isPlaying,
     isPaused,
   }: {

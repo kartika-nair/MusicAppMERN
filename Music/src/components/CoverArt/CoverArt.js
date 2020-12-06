@@ -26,7 +26,7 @@ class CoverArt extends React.Component {
     shrink: false,
   };
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.state.showPlayBtn !== nextProps.showPlayBtn) {
       this.setState(s => ({
         hover: nextProps.showPlayBtn,

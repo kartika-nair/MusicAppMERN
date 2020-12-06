@@ -155,7 +155,9 @@ export default class Recommend extends React.Component {
                             {
                                 this.state.albums.map((album, index) => {
                                     return <CoverArt 
-                                        key = {this.state.albums.id * (Date.now() + index)}
+                                        key = {`recommend ${
+                                            index
+                                        }`}
                                         //key = {uid(index)}
                                         playBtn = {false} 
                                         bigTitle = {true} 

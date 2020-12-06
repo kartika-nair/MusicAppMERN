@@ -79,7 +79,9 @@ export default class Search extends React.Component {
         })
     
     }
-    componentDidUpdate() {
+    onKeyUpHandler() {
+        if (this.state.searchField.length === 0)
+            return;
         this.searchHandler();
     }
 
@@ -118,6 +120,7 @@ export default class Search extends React.Component {
                             placeholder = "Search for an album"
                             className = "search-bar" 
                             type="text" 
+                            onKeyUp = {() => this.onKeyUpHandler()}
                             onChange = {(e) => this.onChangeHandler(e)}/>
                         </div>
                         <br/>
@@ -130,7 +133,9 @@ export default class Search extends React.Component {
                             {
                                 this.state.albums.map((album, index) => {
                                     return <CoverArt 
-                                        key = {this.state.albums.id * (Date.now() + index)}
+                                        key = {`search ${
+                                            index
+                                        }`}
                                         //key = {uid(index)}
                                         playBtn = {false} 
                                         bigTitle = {true} 
