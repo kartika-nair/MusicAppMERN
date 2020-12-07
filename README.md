@@ -6,6 +6,47 @@ A basic MERN stack web application that recommends albums to the user based on t
 - Authentication: includes sign in, sign up, and the landing page
 - Music: includes featured playlists, new releases, search, and recommendations
 
+## Screenshots
+- Sign Up:
+<p align="center">
+  <img src = "./Screenshots/signup.png" height="70%" width="70%">
+</p>
+
+- Sign in:
+<p align="center">
+  <img src = "./Screenshots/signin.png" height="70%" width="70%">
+</p>
+
+- Landing Page (Dashboard):
+<p align="center">
+  <img src = "./Screenshots/landing.png" height="70%" width="70%">
+</p>
+
+- Featured Playlists:
+<p align="center">
+  <img src = "./Screenshots/featured.png" height="70%" width="70%">
+</p>
+
+- New Releases:
+<p align="center">
+  <img src = "./Screenshots/new.png" height="70%" width="70%">
+</p>
+
+- Search:
+<p align="center">
+  <img src = "./Screenshots/search.png" height="70%" width="70%">
+</p>
+
+- Recommendations:
+<p align="center">
+  <img src = "./Screenshots/recommend.png" height="70%" width="70%">
+</p>
+
+- Playing Music:
+<p align="center">
+  <img src = "./Screenshots/playing.png" height="70%" width="70%">
+</p>
+
 ## Installation
 To clone the repository, open terminal and type:
 ```bash
