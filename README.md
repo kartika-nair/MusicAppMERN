@@ -1,6 +1,10 @@
 # Music Recommender System
 
-A basic MERN web app that recommends music to the user based on their prior choices. This was a project done for the subject "Web Technologies" (UE19CS204).
+A basic MERN stack web application that recommends albums to the user based on the genre(s) they choose. This project was done for the subject "Web Technologies" (UE19CS204).
+
+## Folders
+- Authentication: includes sign in, sign up, and the landing page
+- Music: includes featured playlists, new releases, search, and recommendations
 
 ## Installation
 To clone the repository, open terminal and type:
@@ -27,3 +31,8 @@ cd Music
 npm i
 npm start
 ```
+
+## Team Members
+- [Karthik Sairam](https://github.com/karthik-sairam)
+- [Kartika Nair](https://github.com/kartika-nair)
+- [Maitreyi P](https://github.com/Maitreyi-P)

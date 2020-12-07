@@ -6,6 +6,8 @@ import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import { Button } from "@material-ui/core";
 import classes from "./Auth.module.css";
+import Background from '../../img/img7.jpg';
+
 class Login extends Component {
 	constructor() {
 		super();
@@ -54,75 +56,83 @@ class Login extends Component {
 		const { errors } = this.state;
 
 		return (
-			<div className={classes.centered}>
-				<div style={{ marginTop: "4rem" }} className="row">
-					<div className="col s8 offset-s2">
-						<div
-							className="col s12"
-							style={{ paddingLeft: "11.250px" }}
-						>
-							<h4>
-								<b>SIGN IN</b>
-							</h4>
-						</div>
-						<form
-							noValidate
-							onSubmit={this.onSubmit}
-							autoComplete="off"
-						>
-							<div className="input-field col s12">
-								<input
-									onChange={this.onChange}
-									value={this.state.email}
-									error={errors.email}
-									id="email"
-									type="email"
-									className={classnames("", {
-										invalid:
-											errors.email ||
-											errors.emailnotfound,
-									})}
-								/>
-								<label htmlFor="email">Email</label>
-								<span className="red-text">
-									{errors.email}
-									{errors.emailnotfound}
-								</span>
-							</div>
-							<div className="input-field col s12">
-								<input
-									onChange={this.onChange}
-									value={this.state.password}
-									error={errors.password}
-									id="password"
-									type="password"
-									className={classnames("", {
-										invalid:
-											errors.password ||
-											errors.passwordincorrect,
-									})}
-								/>
-								<label htmlFor="password">Password</label>
-								<span className="red-text">
-									{errors.password}
-									{errors.passwordincorrect}
-								</span>
-							</div>
+			<div style={{
+				background: `url(${Background})`,
+				height:'550px',
+				backgroundSize: 'cover',
+				backgroundRepeat:'no-repeat',
+				backgroundPosition: 'center,center'
+				}}>
+				<div className={classes.centered}>
+					<div style={{ marginTop: "4rem" }} className="row">
+						<div className="col s8 offset-s2">
 							<div
 								className="col s12"
 								style={{ paddingLeft: "11.250px" }}
 							>
-								<Button type="submit">SIGN IN</Button>
+								<h4>
+									<b>SIGN IN</b>
+								</h4>
 							</div>
-						</form>
-						<div
-							className="col s12"
-							style={{ paddingLeft: "11.250px" }}
-						>
-							<p className="grey-text text-darken-1">
-								No account?{" "}
-								<Link to="/register">Sign Up!</Link>
-							</p>
+							<form
+								noValidate
+								onSubmit={this.onSubmit}
+								autoComplete="off"
+							>
+								<div className="input-field col s12">
+									<input
+										onChange={this.onChange}
+										value={this.state.email}
+										error={errors.email}
+										id="email"
+										type="email"
+										className={classnames("", {
+											invalid:
+												errors.email ||
+												errors.emailnotfound,
+										})}
+									/>
+									<label htmlFor="email">Email</label>
+									<span className="red-text">
+										{errors.email}
+										{errors.emailnotfound}
+									</span>
+								</div>
+								<div className="input-field col s12">
+									<input
+										onChange={this.onChange}
+										value={this.state.password}
+										error={errors.password}
+										id="password"
+										type="password"
+										className={classnames("", {
+											invalid:
+												errors.password ||
+												errors.passwordincorrect,
+										})}
+									/>
+									<label htmlFor="password">Password</label>
+									<span className="red-text">
+										{errors.password}
+										{errors.passwordincorrect}
+									</span>
+								</div>
+								<div
+									className="col s12"
+									style={{ paddingLeft: "11.250px" }}
+								>
+									<Button type="submit">SIGN IN</Button>
+								</div>
+							</form>
+							<div
+								className="col s12"
+								style={{ paddingLeft: "11.250px" }}
+							>
+								<p className="grey-text text-darken-1">
+									No account?{" "}
+									<Link to="/register">Sign Up!</Link>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

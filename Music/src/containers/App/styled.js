@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { sidebarWidth, playerHeight } from '../../css-variables/layout';
 
 export const Background = styled.div`
-  background-image: linear-gradient(rgb(81, 76, 68), rgb(8, 7, 7) 85%);
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
